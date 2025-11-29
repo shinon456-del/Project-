@@ -11,7 +11,7 @@
     // Poster carousel
     const posters = [
       { src: "style.png", alt: "Flyer – 5-Day Challenge" },
-      { src: "poster.png", alt: "Emergency Response Course Poster" }
+      { src: "Poster.png", alt: "Emergency Response Course Poster" }
     ];
     function showPoster(index) {
       const img = document.getElementById("carousel-image");
