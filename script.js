@@ -11,13 +11,13 @@
     // Poster carousel
     const posters = [
       { src: "style.png", alt: "Flyer – 5-Day Challenge" },
-      { src: "Poster.png", alt: "Emergency Response Course Poster" }
+      { src: "poster.png", alt: "Emergency Response Course Poster" }
     ];
     function showPoster(index) {
       const img = document.getElementById("carousel-image");
       if (!img) return;
-      img.src = Posters[index].src;
-      img.alt = Posters[index].alt;
+      img.src = posters[index].src;
+      img.alt = posters[index].alt;
     }
 
     // Section nav handling (fade-in between sections)
