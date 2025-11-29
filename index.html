@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html id="top" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>#ReadyTogetherCDO – Disaster Preparedness &amp; Resilience</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&amp;family=Source+Sans+Pro&amp;display=swap" rel="stylesheet"/>
+
+<link href="style.css" rel="stylesheet"/></head>
+<body>
+<header>
+<h1>#ReadyTogetherCDO</h1>
+<p class="tagline">Ready Today, Resilient Tomorrow</p>
+<a class="cta" href="#challenge" id="challengeCta">Join the 5-Day Challenge</a>
+</header>
+<nav>
+<a href="#print">📄 Print</a>
+<a href="#audio">🎧 Audio</a>
+<a href="#video">🎥 Video</a>
+<a href="#quiz">🧠 Quiz</a>
+<a href="#schedule">📅 Schedule</a>
+<a href="#social">📱 Social</a>
+<a href="#polls">📊 Polls</a>
+</nav>
+<main class="container">
+<section id="print">
+<h2>📄 Print Toolkit</h2>
+<p>Download the tri-fold brochure and infographic poster. Scan the QR code to access resources.</p>
+<a class="cta" href="#">Download Brochure</a>
+<a class="cta" href="#">Download Poster</a>
+<hr style="margin:30px 0; border:none; border-top:1px solid #ccc;"/>
+<h3 style="color:#37474F;">🎯 Featured Posters</h3>
+<div id="poster-carousel" style="position:relative; max-width:600px; margin:auto;">
+<img alt="Flyer – 5-Day Challenge" id="carousel-image" src="style.png" style="width:100%; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1);"/>
+<div style="text-align:center; margin-top:10px;">
+<button class="cta" onclick="showPoster(0)">Brochure</button>
+<button class="cta" onclick="showPoster(1)">Poster</button>
+</div>
+</div>
+</section>
+<section id="challenge">
+<h2>🚀 5-Day Challenge</h2>
+<ul style="line-height:1.8;">
+<li><strong>Day 1:</strong> Pack your emergency kit</li>
+<li><strong>Day 2:</strong> Secure important documents</li>
+<li><strong>Day 3:</strong> Verify site exits</li>
+<li><strong>Day 4:</strong> Practice Drop, Cover, Hold</li>
+<li><strong>Day 5:</strong> Join the community poll</li>
+</ul>
+</section>
+<section id="schedule">
+<h2>📅 December 5, 2025 Post Schedule</h2>
+<ul>
+<li>Instagram: Tue/Thu/Sun – 7pm/4pm</li>
+<li>Facebook: Mon/Wed/Fri/Sat – 6pm/10am</li>
+<li>TikTok: Wed/Sat – 8pm/5pm</li>
+<li>X (Twitter): Daily – 12pm/6pm</li>
+<li>YouTube: Fri – 8pm</li>
+</ul>
+</section>
+<section id="social">
+<h2>📱 Social Media Mock-up</h2>
+<div class="grid">
+<div style="background:#fafafa; border:1px solid #eee; border-radius:8px; padding:16px;">
+<strong>Instagram Carousel</strong><br/>
+          Teaser + Checklist + CTA
+        </div>
+<div style="background:#fafafa; border:1px solid #eee; border-radius:8px; padding:16px;">
+<strong>Facebook Carousel</strong><br/>
+          Short story + link to challenge
+        </div>
+</div>
+</section>
+</main>
+<!-- Audio Modal -->
+<div aria-hidden="true" class="modal" id="audioModal">
+<div class="modal-content">
+<span aria-label="Close audio modal" class="modal-close" onclick="closeModal('audioModal')">×</span>
+<h2>🎧 Audio PSA</h2>
+<audio controls="" style="width:100%">
+<source src="podcast.mp3" type="audio/mpeg"/>
+</audio>
+</div>
+</div>
+<!-- Video Modal -->
+<div aria-hidden="true" class="modal" id="videoModal">
+<div class="modal-content">
+<span aria-label="Close video modal" class="modal-close" onclick="closeModal('videoModal')">×</span>
+<h2>🎥 Video Storyteller</h2>
+<div class="media-box"><video controls="" style="width:100%; border-radius:8px;"><source src="Video.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div>
+<!-- Example: <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" ... ></iframe> -->
+</div>
+</div>
+<!-- Quiz Modal (cleaned: no nested duplicates) -->
+<div aria-hidden="true" class="modal" id="quizModal">
+<div class="modal-content">
+<span aria-label="Close quiz modal" class="modal-close" onclick="closeModal('quizModal')">×</span>
+<h2>🧠 Quick Quiz</h2>
+<form id="quiz-form">
+<p>Q1: Best action during earthquake shaking?</p>
+<label><input name="q1" type="radio" value="drop"/> Drop, Cover, Hold</label><span class="feedback" id="fb-q1"></span><br>
+<label><input name="q1" type="radio" value="run"/> Run outside immediately</label><br>
+<p>Q2: Where should you store your emergency kit?</p>
+<label><input name="q2" type="radio" value="exit"/> Near the exit</label><span class="feedback" id="fb-q2"></span><br/>
+<label><input name="q2" type="radio" value="deep"/> Deep storage</label><br/>
+<p>Q3: What is the most important item to include in your kit?</p>
+<label><input name="q3" type="radio" value="water"/> Water</label><span class="feedback" id="fb-q3"></span><br/>
+<label><input name="q3" type="radio" value="toys"/> Toys</label><br/>
+<p>Q4: During a fire, what should you do first?</p>
+<label><input name="q4" type="radio" value="exit"/> Find the nearest exit</label><span class="feedback" id="fb-q4"></span><br/>
+<label><input name="q4" type="radio" value="hide"/> Hide under the bed</label><br/>
+<p>Q5: How often should you check your emergency kit?</p>
+<label><input name="q5" type="radio" value="yearly"/> Once a year</label><br/>
+<label><input name="q5" type="radio" value="monthly"/> Every month</label><span class="feedback" id="fb-q5"></span><br/>
+<p>Q6: What’s the safest place during a typhoon?</p>
+<label><input name="q6" type="radio" value="indoors"/> Indoors away from windows</label><span class="feedback" id="fb-q6"></span><br/>
+<label><input name="q6" type="radio" value="outside"/> Outside to watch</label><br/>
+<p>Q7: Why is it important to secure documents?</p>
+<label><input name="q7" type="radio" value="proof"/> For identification and recovery</label><span class="feedback" id="fb-q7"></span><br/>
+<label><input name="q7" type="radio" value="fun"/> For fun</label><br/>
+<button class="cta" type="submit">Check Answers</button>
+</br></br></form>
+<div id="quiz-result" style="margin-top:10px;"></div>
+<button class="cta" id="resetQuiz" style="margin-top:10px;">Reset Quiz</button>
+<button class="cta" id="downloadScore" style="margin-top:10px;">Download My Score</button>
+<div id="quiz-chart" style="margin-top:20px;">
+<div style="margin-bottom:8px;">Correct: <div class="bar" id="bar-correct" style="width:0%;"></div></div>
+<div style="margin-bottom:8px;">Incorrect: <div class="bar" id="bar-incorrect" style="width:0%;"></div></div>
+</div>
+</div>
+</div>
+<!-- Polls Modal -->
+<div aria-hidden="true" class="modal" id="pollsModal">
+<div class="modal-content">
+<span aria-label="Close polls modal" class="modal-close" onclick="closeModal('pollsModal')">×</span>
+<h2>📊 Community Polls</h2>
+<!-- Emergency Kit Poll -->
+<form id="poll-kit">
+<p>Do you already have a complete emergency kit at home?</p>
+<label><input name="kit" type="radio" value="Yes"/> Yes</label><br/>
+<label><input name="kit" type="radio" value="Partially"/> Partially</label><br/>
+<label><input name="kit" type="radio" value="Not yet"/> Not yet</label><br/>
+<button class="cta" type="submit">Submit</button>
+</form>
+<div id="poll-kit-result"></div>
+<div id="poll-kit-chart" style="margin-top:20px;">
+<div>Yes: <div class="bar" data-value="Yes" style="width:0%; background:#1E88E5;"></div></div>
+<div>Partially: <div class="bar" data-value="Partially" style="width:0%; background:#F9A825;"></div></div>
+<div>Not yet: <div class="bar" data-value="Not yet" style="width:0%; background:#2E7D32;"></div></div>
+</div>
+<hr style="margin:24px 0; border:none; border-top:1px solid #eee;"/>
+<!-- Essential Item Poll -->
+<form id="poll-item">
+<p>Which item do you think is most essential in an emergency kit?</p>
+<label><input name="item" type="radio" value="Water"/> Water</label><br/>
+<label><input name="item" type="radio" value="First aid"/> First aid</label><br/>
+<label><input name="item" type="radio" value="Flashlight"/> Flashlight</label><br/>
+<label><input name="item" type="radio" value="Documents"/> Important documents</label><br/>
+<button class="cta" type="submit">Submit</button>
+</form>
+<div id="poll-item-result"></div>
+<div id="poll-item-chart" style="margin-top:20px;">
+<div>Water: <div class="bar" data-value="Water" style="width:0%; background:#1E88E5;"></div></div>
+<div>First aid: <div class="bar" data-value="First aid" style="width:0%; background:#2E7D32;"></div></div>
+<div>Flashlight: <div class="bar" data-value="Flashlight" style="width:0%; background:#F9A825;"></div></div>
+<div>Documents: <div class="bar" data-value="Documents" style="width:0%; background:#E53935;"></div></div>
+</div>
+<hr style="margin:24px 0; border:none; border-top:1px solid #eee;"/>
+<!-- Confidence Poll -->
+<form id="poll-confidence">
+<p>How confident are you in practicing “Drop, Cover, Hold” during an earthquake?</p>
+<label><input name="confidence" type="radio" value="Very confident"/> Very confident</label><br/>
+<label><input name="confidence" type="radio" value="Somewhat confident"/> Somewhat confident</label><br/>
+<label><input name="confidence" type="radio" value="Not confident"/> Not confident</label><br/>
+<button class="cta" type="submit">Submit</button>
+</form>
+<div id="poll-confidence-result"></div>
+<div id="poll-confidence-chart" style="margin-top:20px;">
+<div>Very confident: <div class="bar" data-value="Very confident" style="width:0%; background:#1E88E5;"></div></div>
+<div>Somewhat confident: <div class="bar" data-value="Somewhat confident" style="width:0%; background:#F9A825;"></div></div>
+<div>Not confident: <div class="bar" data-value="Not confident" style="width:0%; background:#E53935;"></div></div>
+</div>
+<hr style="margin:24px 0; border:none; border-top:1px solid #eee;"/>
+<!-- Kit Location Poll -->
+<form id="poll-location">
+<p>Where do you usually keep your emergency kit?</p>
+<label><input name="location" type="radio" value="Exit"/> Near the exit</label><br/>
+<label><input name="location" type="radio" value="Bedroom"/> Bedroom</label><br/>
+<label><input name="location" type="radio" value="Living room"/> Living room</label><br/>
+<label><input name="location" type="radio" value="Other"/> Other</label><br/>
+<button class="cta" type="submit">Submit</button>
+</form>
+<div id="poll-location-result"></div>
+<div id="poll-location-chart" style="margin-top:20px;">
+<div>Exit: <div class="bar" data-value="Exit" style="width:0%; background:#1E88E5;"></div></div>
+<div>Bedroom: <div class="bar" data-value="Bedroom" style="width:0%; background:#2E7D32;"></div></div>
+<div>Living room: <div class="bar" data-value="Living room" style="width:0%; background:#F9A825;"></div></div>
+<div>Other: <div class="bar" data-value="Other" style="width:0%; background:#E53935;"></div></div>
+</div>
+<hr style="margin:24px 0; border:none; border-top:1px solid #eee;"/>
+<!-- Drill Participation Poll -->
+<form id="poll-drill">
+<p>Would you join a community disaster drill if invited?</p>
+<label><input name="drill" type="radio" value="Yes"/> Yes</label><br/>
+<label><input name="drill" type="radio" value="Maybe"/> Maybe</label><br/>
+<label><input name="drill" type="radio" value="No"/> No</label><br/>
+<button class="cta" type="submit">Submit</button>
+</form>
+<div id="poll-drill-result"></div>
+<div id="poll-drill-chart" style="margin-top:20px;">
+<div>Yes: <div class="bar" data-value="Yes" style="width:0%; background:#1E88E5;"></div></div>
+<div>Maybe: <div class="bar" data-value="Maybe" style="width:0%; background:#F9A825;"></div></div>
+<div>No: <div class="bar" data-value="No" style="width:0%; background:#E53935;"></div></div>
+</div>
+<hr style="margin:24px 0; border:none; border-top:1px solid #eee;"/>
+<!-- Platform Poll -->
+<form id="poll-platform">
+<p>Which platform helps you most in learning preparedness tips?</p>
+<label><input name="platform" type="radio" value="Facebook"/> Facebook</label><br/>
+<label><input name="platform" type="radio" value="TikTok"/> TikTok</label><br/>
+<label><input name="platform" type="radio" value="YouTube"/> YouTube</label><br/>
+<label><input name="platform" type="radio" value="School"/> School</label><br/>
+<button class="cta" type="submit">Submit</button>
+</form>
+<div id="poll-platform-result"></div>
+<div id="poll-platform-chart" style="margin-top:20px;">
+<div>Facebook: <div class="bar" data-value="Facebook" style="width:0%; background:#1E88E5;"></div></div>
+<div>TikTok: <div class="bar" data-value="TikTok" style="width:0%; background:#F9A825;"></div></div>
+<div>YouTube: <div class="bar" data-value="YouTube" style="width:0%; background:#2E7D32;"></div></div>
+<div>School: <div class="bar" data-value="School" style="width:0%; background:#E53935;"></div></div>
+</div>
+</div>
+</div>
+<a href="#top" id="backToTop">Back to top</a>
+<footer>
+    #ReadyTogetherCDO — Ready Today, Resilient Tomorrow
+  </footer>
+
+<script src="script.js"></script></body>
+</html>
+&gt;/html&gt;
+&gt;

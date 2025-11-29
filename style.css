@@ -1,0 +1,106 @@
+
+    :root {
+      --blue: #1E88E5;
+      --green: #2E7D32;
+      --yellow: #F9A825;
+      --charcoal: #37474F;
+      --light: #F5F7FA;
+      --red: #E53935;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Source Sans Pro', sans-serif; background: var(--light); color: var(--charcoal); }
+    header {
+      background: url('media/banner.jpg') center/cover no-repeat, linear-gradient(135deg, var(--blue), var(--green));
+      color: white; text-align: center; padding: 60px 20px;
+    }
+    header h1 { font-family: 'Montserrat', sans-serif; font-size: 2.2rem; margin: 0; }
+    .tagline { font-size: 1.1rem; margin-top: 10px; }
+
+    nav {
+      background: white; border-bottom: 1px solid #ddd;
+      display: flex; flex-wrap: wrap; justify-content: center;
+      position: sticky; top: 0; z-index: 999;
+    }
+    nav a {
+      padding: 12px 16px; color: var(--blue); font-weight: 600;
+      text-decoration: none; transition: background 0.2s;
+    }
+    nav a:hover, nav a.active { background: #eef6fd; border-radius: 6px; }
+
+    .container { max-width: 1100px; margin: auto; padding: 20px; }
+
+    /* Section transitions */
+    main section {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      display: none; background: white; margin-bottom: 20px; padding: 20px;
+      border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    main section.active { display: block; opacity: 1; transform: translateY(0); }
+
+    h2 { font-family: 'Montserrat', sans-serif; color: var(--blue); }
+    .cta {
+      display: inline-block; background: var(--yellow); color: #111;
+      padding: 10px 16px; border-radius: 8px; font-weight: bold;
+      margin-top: 10px; text-decoration: none; cursor: pointer;
+    }
+    .cta:hover { filter: brightness(1.1); }
+
+    footer { text-align: center; padding: 20px; background: #eee; font-size: 0.9rem; color: #555; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.6rem; }
+      .tagline { font-size: 1rem; }
+    }
+
+    /* Bars for charts */
+    .bar { height: 20px; border-radius: 4px; transition: width 0.5s ease; background: #ddd; }
+    #bar-correct { background: var(--green); }
+    #bar-incorrect { background: var(--red); }
+
+    #backToTop {
+      position: fixed; bottom: 20px; right: 20px;
+      background: var(--blue); color: white;
+      padding: 10px 14px; border-radius: 50px;
+      font-weight: bold; text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Loader spinner */
+    .loader {
+      border: 4px solid #f3f3f3; border-top: 4px solid var(--blue);
+      border-radius: 50%; width: 24px; height: 24px;
+      animation: spin 1s linear infinite; display: inline-block;
+      vertical-align: middle; margin-left: 8px;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+    /* Progress bar */
+    .progress-container { width: 100%; background: #ddd; border-radius: 6px; margin-top: 10px; height: 8px; overflow: hidden; }
+    .progress-bar { height: 100%; width: 0%; background: var(--blue); transition: width 0.8s linear; }
+
+    /* Fade-in utility */
+    .fade-in { opacity: 0; transition: opacity 0.6s ease-in; }
+    .fade-in.show { opacity: 1; }
+
+    /* Modal overlay */
+    .modal {
+      display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+      width: 100%; height: 100%; background: rgba(0,0,0,0.6);
+      justify-content: center; align-items: center; padding: 20px;
+    }
+    .modal-content {
+      background: white; padding: 20px; border-radius: 10px; max-width: 700px; width: 100%;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3); animation: modalIn 0.25s ease;
+      max-height: 85vh; overflow-y: auto;
+    }
+    .modal-close {
+      float: right; font-size: 1.6rem; font-weight: bold; cursor: pointer; color: var(--red); line-height: 1;
+    }
+    @keyframes modalIn { from { opacity: 0; transform: translateY(8px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+    .media-box { background:#000; aspect-ratio:16/9; border-radius:8px; display:grid; place-items:center; color:#fff; }
+
+    /* Quiz feedback label */
+    .feedback { margin-left: 8px; font-weight: bold; }
+  
