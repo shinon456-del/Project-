@@ -16,8 +16,8 @@
     function showPoster(index) {
       const img = document.getElementById("carousel-image");
       if (!img) return;
-      img.src = posters[index].src;
-      img.alt = posters[index].alt;
+      img.src = Posters[index].src;
+      img.alt = Posters[index].alt;
     }
 
     // Section nav handling (fade-in between sections)
